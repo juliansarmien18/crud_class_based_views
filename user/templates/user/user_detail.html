@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ block.super }}
+    Detalle Usuario
+{% endblock title %}
+
+{{% block content %}
+    <h3>{{ user.name }}</h3>
+    <p>Email: <i>{{ user.email }}</i></p>
+    <p>Telefono: <i>{{ user.phone }}</i></p>
+    <p> 
+        <a href="{% url "user:edit" user.id %}">Editar</a> | 
+        <a href="{% url "user:delete" user.id %}">Borrar</a> 
+    </p>
+    <p>
+        <a href="{% url "user:list" %}">Regresar</a>
+    </p>
+{% endblock content %}}

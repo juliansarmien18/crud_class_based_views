@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ block.super }}
+    Home
+{% endblock  %}
+{% block content %}
+    <ul>
+        {% for user in object_list %}
+            <li>
+                <a href="{% url "user:detail" user.id %}">{{ user.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock  %}
